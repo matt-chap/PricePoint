@@ -1,3 +1,10 @@
+$primaryTxtColor: red;
+$secondaryTxtColor: yellow;
+
+p {
+  color: $primaryTxtColor;
+}
+
 .App {
   text-align: center;
 }
