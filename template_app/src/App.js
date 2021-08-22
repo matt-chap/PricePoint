@@ -1,4 +1,3 @@
-import logo from './logo.svg'
 import './App.scss'
 import { LandingPage } from './pages/public/landingPage'
 import { NavigationTop } from './components/navagation/navTop'
