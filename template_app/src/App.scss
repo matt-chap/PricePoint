@@ -1,21 +1,27 @@
-$primaryTxtColor: red;
-$secondaryTxtColor: yellow;
+$primaryTxtColor: white;
+$secondaryTxtColor: #61dafb;
 
-.App {
-  text-align: center;
-}
+$primaryBackgroundColor: #282c34;
+$secondaryBackgroundColor: #282c34;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.landing-background {
+  background-color: $primaryBackgroundColor;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $primaryTxtColor;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-background {
+  background-color: $primaryBackgroundColor;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $primaryTxtColor;
 }
