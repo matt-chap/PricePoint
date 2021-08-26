@@ -1,7 +1,7 @@
 import './App.scss'
 import { LandingPage } from './pages/public/landingPage'
 import { NavigationTop } from './components/navagation/navTop'
-import { Footer } from './components/footer'
+import { Footer } from './components/navagation/footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
