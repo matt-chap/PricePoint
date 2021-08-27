@@ -1,4 +1,4 @@
-import './App.scss'
+import './styles/App.scss'
 import { LandingPage } from './pages/public/landingPage'
 import { NavigationTop } from './components/navagation/navTop'
 import { Footer } from './components/navagation/footer'
