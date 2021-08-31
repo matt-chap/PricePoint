@@ -2,12 +2,21 @@
 @import "../../styles/utilities/variables";
 
 .footer_background {
-    background-color: $primaryBackgroundColor;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: $primaryTxtColor;
-  }
+  background-color: $primaryBackgroundColor;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $primaryTxtColor;
+}
+
+.bold_text {
+  font-weight: bold;
+}
+
+.center_items {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
