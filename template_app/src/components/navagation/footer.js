@@ -22,7 +22,7 @@ export const Footer = () => {
                     </Row>
                 </Col>
                 <Col md={4} style={{}} className={styles.center_items}>
-                    <Row md={12}>
+                    <Row md={12} className={styles.bold_text}>
                         <Col md={12}>APPs</Col>
                     </Row>
                     <Row md={12}>
