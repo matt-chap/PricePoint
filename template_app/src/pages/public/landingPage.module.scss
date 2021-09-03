@@ -3,11 +3,16 @@
 
 .landing_background {
     background-color: $primaryBackgroundColor;
-    height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     font-size: calc(10px + 2vmin);
     color: $primaryTxtColor;
   }
+
+.image_container{
+  background-color: $secondaryBackgroundColor;
+  min-height: 650px;
+}
