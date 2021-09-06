@@ -18,6 +18,12 @@ export const LandingPage = () => {
                 <Col md={4}>
                 </Col>
             </Row>
+            <Row md={12} style={{backgroundColor:"rgb(247, 247, 247)",height:"180px"}}>
+                <Col md={6}>
+                </Col>
+                <Col md={6}>
+                </Col>
+            </Row>
             </Container>
         </div>
     )

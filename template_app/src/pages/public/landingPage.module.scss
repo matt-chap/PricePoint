@@ -9,10 +9,11 @@
     align-items: flex-start;
     justify-content: flex-start;
     font-size: calc(10px + 2vmin);
-    color: $primaryTxtColor;
+    color: $color_white;
   }
 
 .image_container{
   background-color: $secondaryBackgroundColor;
   min-height: 650px;
 }
+
