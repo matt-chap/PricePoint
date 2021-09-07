@@ -2,7 +2,7 @@
 @import "../../styles/utilities/variables";
 
 .landing_background {
-    background-color: $primaryBackgroundColor;
+    background-color: $color_light_black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
   }
 
 .image_container{
-  background-color: $secondaryBackgroundColor;
+  background-color: $color_dark_black;
   min-height: 650px;
 }
 
