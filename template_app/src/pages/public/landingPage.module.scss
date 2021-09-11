@@ -15,6 +15,9 @@
 .image_container{
   background-color: $color_dark_black;
   min-height: 650px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .landing_about {
@@ -26,4 +29,11 @@
 .summary_text {
   font-size: 1.25rem;
   color: $color_dark_black;
+}
+
+.button_primary {
+  color: $color_white !important;
+  font-size: 1.5rem !important;
+  border-color: $color_white !important;
+  border-radius: 1.5rem !important;
 }

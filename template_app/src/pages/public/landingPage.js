@@ -2,6 +2,8 @@ import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import styles from './landingPage.module.scss'
 import { LocalGroceryStore, Storefront, Devices } from '@material-ui/icons'
+import Button from '@material-ui/core/Button';
+import { style } from 'dom-helpers';
 
 export const LandingPage = () => {
     return (
@@ -9,6 +11,18 @@ export const LandingPage = () => {
             <Container fluid>
                 <Row md={12} className={styles.image_container}>
                     <Col md={12}>
+                        <Row>
+                            <Col md={12} style={{color:"white"}}>
+                                Get it all in OneTrip. Sign up today.
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={12} style={{color:"white"}}>
+                                <Button variant="outlined" color="primary" className={styles.button_primary}>
+                                Sign Up
+                                </Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
                 <Row md={12} className={styles.landing_about}>
