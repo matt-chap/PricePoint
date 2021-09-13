@@ -12,12 +12,12 @@ export const LandingPage = () => {
                 <Row md={12} className={styles.image_container}>
                     <Col md={12}>
                         <Row>
-                            <Col md={12} style={{color:"white"}}>
+                            <Col md={12}>
                                 Get it all in OneTrip. Sign up today.
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={12} style={{color:"white"}}>
+                            <Col md={12}>
                                 <Button variant="outlined" color="primary" className={styles.button_primary}>
                                 Sign Up
                                 </Button>

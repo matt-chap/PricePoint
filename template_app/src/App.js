@@ -1,5 +1,5 @@
 import './styles/App.scss'
-import { LandingPage } from './pages/public/landingPage'
+import { SignupPage } from './pages/public/signupPage'
 import { NavigationTop } from './components/navagation/navTop'
 import { Footer } from './components/navagation/footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavigationTop />
-      <LandingPage />
+      <SignupPage />
       <Footer />
     </div>
   )
