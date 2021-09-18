@@ -3,10 +3,17 @@
 .faq_background {
     background-color: $color_light_black;
     height: auto;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: $color_white;
+    padding: 5vh 0vh;
+}
+
+.accordion_header {
+    font-size: calc(10px + 1.25vmin);
+    color: $color_dark_black;
+}
+
+.accordion_body {
+    font-size: calc(10px + .75vmin);
+    color: $color_dark_black;
 }
