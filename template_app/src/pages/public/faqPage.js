@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './faqPage.module.scss'
-import { Container, Row, Col, Form, Button, Accordion } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button, Accordion, Card } from 'react-bootstrap'
 
 export const FAQPage = () => {
     return (
@@ -8,10 +8,10 @@ export const FAQPage = () => {
             <Row className={styles.row_padding}>
                 <Col xs={0} sm={0} md={2} lg={2}></Col>
                 <Col sm={12} md={8} lg={8} className={styles.row_padding}>
-                    <Accordion defaultActiveKey="0" flush>
+                    <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0">
-                            <Accordion.Header>Accordion Item #1</Accordion.Header>
-                            <Accordion.Body>
+                            <Accordion.Header className={styles.accordion_header}>Accordion Item #1</Accordion.Header>
+                            <Accordion.Body className={styles.accordion_body}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -22,8 +22,8 @@ export const FAQPage = () => {
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="1">
-                            <Accordion.Header>Accordion Item #2</Accordion.Header>
-                            <Accordion.Body>
+                            <Accordion.Header className={styles.accordion_header}>Accordion Item #2</Accordion.Header>
+                            <Accordion.Body className={styles.accordion_body}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -34,8 +34,8 @@ export const FAQPage = () => {
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="2">
-                            <Accordion.Header>Accordion Item #3</Accordion.Header>
-                            <Accordion.Body>
+                            <Accordion.Header className={styles.accordion_header}>Accordion Item #3</Accordion.Header>
+                            <Accordion.Body className={styles.accordion_body}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -46,8 +46,8 @@ export const FAQPage = () => {
                             </Accordion.Body>
                         </Accordion.Item>
                         <Accordion.Item eventKey="3">
-                            <Accordion.Header>Accordion Item #4</Accordion.Header>
-                            <Accordion.Body>
+                            <Accordion.Header className={styles.accordion_header}>Accordion Item #4</Accordion.Header>
+                            <Accordion.Body className={styles.accordion_body}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
