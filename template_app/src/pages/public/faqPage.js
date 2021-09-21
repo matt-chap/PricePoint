@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './faqPage.module.scss'
-import { Container, Row, Col, Form, Button, Accordion, Card } from 'react-bootstrap'
+import { Container, Row, Col, Accordion } from 'react-bootstrap'
 
 export const FAQPage = () => {
     return (
