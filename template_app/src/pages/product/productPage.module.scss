@@ -1,2 +1,24 @@
 @import "../../styles/utilities/variables";
 
+.product_background {
+    background-color: $color_light_black;
+    font-size: calc(20px + .75vmin);
+    color: $color_white;
+}
+
+.center_align_items {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.row_padding {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.flex_reverse {
+    flex-direction: row-reverse;
+    display: flex;
+    padding: 20px 0px;
+}
