@@ -8,7 +8,7 @@ export const LoginPage = () => {
     }
 
     return (
-        <Container fluid className={styles.signup_background}>
+        <Container fluid className={styles.login_background}>
             <Row className={styles.row_padding}>
                 <Col xs={0} sm={0} md={1} lg={1}></Col>
                 <Col sm={12} md={6} lg={3} className={styles.row_padding}>

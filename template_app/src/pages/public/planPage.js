@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export const PlanPage = () => {
     return (
-        <Container fluid className={styles.signup_background}>
+        <Container fluid className={styles.plan_background}>
             <Row className={styles.row_padding}>
                 <Col xs={0} sm={0} md={1} lg={1}></Col>
                 <Col sm={12} md={6} lg={3} className={styles.row_padding}></Col>

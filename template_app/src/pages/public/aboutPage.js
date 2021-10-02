@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 export const AboutPage = () => {
     return (
-        <Container fluid className={styles.contactUs_background}>
+        <Container fluid className={styles.about_background}>
             <Row className={styles.row_padding}>
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
                 <Col sm={12} md={8} lg={8} className={styles.center_align_items}></Col>
