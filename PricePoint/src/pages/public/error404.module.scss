@@ -1,0 +1,39 @@
+// Utilities
+@import "../../styles/utilities/variables";
+
+.landing_background {
+    background-color: $color_light_black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: calc(10px + 2vmin);
+    color: $color_white;
+  }
+
+.image_container{
+  background-color: $color_dark_black;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.landing_about {
+  background-color: $color_off_white;
+  color: $color_grey;
+  text-align: center;
+}
+
+.summary_text {
+  font-size: 1.25rem;
+  color: $color_dark_black;
+}
+
+.button_primary {
+  color: $color_white !important;
+  font-size: 1.5rem !important;
+  border-color: $color_white !important;
+  border-radius: 1.5rem !important;
+}

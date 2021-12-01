@@ -7,16 +7,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { LoginPage } from './pages/public/loginPage'
 import { AboutPage } from './pages/public/aboutPage'
 import { PlanPage } from './pages/public/planPage'
-
+import { Error404 } from './pages/public/error404'
+import { LandingPage } from './pages/public/landingPage'
 
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} >
+        <Route path="/landing" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/plans" element={<PlanPage />} />
-        <Route path="/*" element={<PlanPage />} />
+        <Route path="/*" element={<Error404 />} />
       </Route>
     </Routes>
   </BrowserRouter>,

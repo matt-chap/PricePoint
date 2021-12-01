@@ -6,7 +6,7 @@ export const NavigationTop = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Link to="/" class="navbar-brand">OneTrip</Link>
+        <Link to="/landing" class="navbar-brand">OneTrip</Link>
         <Nav className="me-auto">
 
           <Link to="/plans" class="nav-link">
