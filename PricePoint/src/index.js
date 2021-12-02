@@ -9,6 +9,8 @@ import { AboutPage } from './pages/public/aboutPage'
 import { PlanPage } from './pages/public/planPage'
 import { Error404 } from './pages/public/error404'
 import { LandingPage } from './pages/public/landingPage'
+import { InternalLayout } from './components/layout/internalLayout'
+
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,6 +20,7 @@ ReactDOM.render(
         <Route path="/login" element={<LoginPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/plans" element={<PlanPage />} />
+        <Route path="/internalLayout" element={<InternalLayout />} />
         <Route path="/*" element={<Error404 />} />
       </Route>
     </Routes>

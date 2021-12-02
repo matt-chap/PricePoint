@@ -18,6 +18,9 @@ export const NavigationTop = () => {
           <Link to="/login" class="nav-link">
             Login
           </Link>
+          <Link to="/internalLayout" class="nav-link">
+            internalLayout
+          </Link>
         </Nav>
       </Container>
     </Navbar>
