@@ -1,3 +1,16 @@
 // Utilities
 @import "../../styles/utilities/variables";
 
+.nav_left_background {
+    background-color: #25282F;
+    color: $color_white;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+  }
+
+  .nav_link {
+    color: $color_white;
+    min-width: 200px;
+    text-decoration: none;
+    padding: 10px;
+  }
