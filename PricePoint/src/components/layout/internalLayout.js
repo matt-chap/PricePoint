@@ -1,12 +1,15 @@
 import React from 'react'
 import { NavigationLeft } from '../navagation/navLeft'
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export const InternalLayout = () => {
     return (
-        <div>
+        <Container fluid className="p-0">
+            <Row className="m-0">
             <NavigationLeft />
             <Outlet />
-        </div>
+            </Row>
+        </Container>
     )
 }

@@ -11,6 +11,8 @@ import { Error404 } from './pages/public/error404'
 import { LandingPage } from './pages/public/landingPage'
 import { InternalLayout } from './components/layout/internalLayout'
 import { IngredientList } from './pages/product/ingredientList'
+import { InventoryPage } from './pages/product/inventoryPage'
+import { RecipeList } from './pages/product/recipeList'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,8 +24,10 @@ ReactDOM.render(
         <Route path="/plans" element={<PlanPage />} />
 
         <Route path="/internalLayout" element={<InternalLayout />} >
-        <Route path="/internalLayout/ingredients" element={<IngredientList />} />
-          </Route>
+          <Route path="/internalLayout/ingredients" element={<IngredientList />} />
+          <Route path="/internalLayout/inventory" element={<InventoryPage />} />
+          <Route path="/internalLayout/recipe" element={<RecipeList />} />
+        </Route>
         <Route path="/*" element={<Error404 />} />
       </Route>
     </Routes>

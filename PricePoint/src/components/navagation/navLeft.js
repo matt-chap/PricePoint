@@ -2,24 +2,22 @@ import React from 'react'
 import styles from './navLeft.module.scss'
 import { Link } from 'react-router-dom'
 import { Nav } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export const NavigationLeft = () => {
   return (
-
-        <Nav className="flex-column" style={{width:'200px'}} className={`${styles.nav_left_background}`}>
-
-          <Link to="/internalLayout/ingredients" className={`${styles.nav_link}`}>
-            Ingredients
-          </Link>
-          <Link to="/about" className={`${styles.nav_link}`}>
-            About
-          </Link>
-          <Link to="/login" className={`${styles.nav_link}`}>
-            Login
-          </Link>
-          <Link to="/login" className={`${styles.nav_link}`}>
-            Login
-          </Link>
-        </Nav>
+    <Col sm={1} md={1} lg={1} className="g-0">
+    <Nav className="flex-column" className={`${styles.nav_left_background}`}>
+      <Link to="/internalLayout/ingredients" className={`${styles.nav_link}`}>
+        Ingredients
+      </Link>
+      <Link to="/internalLayout/inventory" className={`${styles.nav_link}`}>
+        Inventory
+      </Link>
+      <Link to="/internalLayout/recipe" className={`${styles.nav_link}`}>
+        Recipe
+      </Link>
+    </Nav>
+    </Col>
   )
 }
