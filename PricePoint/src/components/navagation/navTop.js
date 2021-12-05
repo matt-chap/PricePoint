@@ -8,7 +8,6 @@ export const NavigationTop = () => {
       <Container>
         <Link to="/landing" class="navbar-brand">OneTrip</Link>
         <Nav className="me-auto">
-
           <Link to="/plans" class="nav-link">
             Plans
           </Link>

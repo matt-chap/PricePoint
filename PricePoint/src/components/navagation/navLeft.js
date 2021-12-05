@@ -17,6 +17,9 @@ export const NavigationLeft = () => {
       <Link to="/internalLayout/recipe" className={`${styles.nav_link}`}>
         Recipe
       </Link>
+      <Link to="/internalLayout/employee" className={`${styles.nav_link}`}>
+        Employee
+      </Link>
     </Nav>
     </Col>
   )
