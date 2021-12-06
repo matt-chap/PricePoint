@@ -1,15 +1,16 @@
 import React from 'react'
-import styles from './ingredientsList.module.scss'
+import styles from './inventoryList.module.scss'
 import { Container, Row, Col } from 'react-bootstrap'
 
-const ingredients = [
+const inventory = [
     {RecipeId: 0, Recipe:"Burger", Ingrdients: ["Ingredient1","Ingredient2","Ingredient3"], CostBreakdown:[{Inventory: 3, Employee: 4, Land: 0.25, Total: 10}]},
     {RecipeId: 1, Recipe:"Burger", Ingrdients: ["Ingredient1","Ingredient2","Ingredient3"], CostBreakdown:[{Inventory: 3, Employee: 4, Land: 0.25, Total: 10}]},
     {RecipeId: 2, Recipe:"Burger", Ingrdients: ["Ingredient1","Ingredient2","Ingredient3"], CostBreakdown:[{Inventory: 3, Employee: 4, Land: 0.25, Total: 10}]},
     {RecipeId: 3, Recipe:"Burger", Ingrdients: ["Ingredient1","Ingredient2","Ingredient3"], CostBreakdown:[{Inventory: 3, Employee: 4, Land: 0.25, Total: 10}]}
 ]
 
-export const IngredientList = () => {
+
+export const InventoryPage = () => {
     return (
         <Col sm={11} md={11} lg={11} className={styles.recipe_background}>
             <h1>Inventory List</h1>
@@ -23,18 +24,18 @@ export const IngredientList = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th className={styles.ingredient_data}>Recipe</th>
-                                    <th className={styles.ingredient_data}>Ingrdients</th>
-                                    <th className={styles.ingredient_data}>Cost Breakdown</th>
+                                    <th className={styles.inventory_data}>Recipe</th>
+                                    <th className={styles.inventory_data}>Ingrdients</th>
+                                    <th className={styles.inventory_data}>Cost Breakdown</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {ingredients && ingredients.map((x) => {
+                                {inventory && inventory.map((x) => {
                                     return (
                                         <tr key={x.RecipeId}>
-                                            <td className={styles.ingredient_data}>{x.Recipe}</td>
-                                            <td className={styles.ingredient_data}>{x.Ingrdients && x.Ingrdients.join("\n")}</td>
-                                            <td className={styles.ingredient_data}>{x.CostBreakdown && x.CostBreakdown.map((v) => { return (
+                                            <td className={styles.inventory_data}>{x.Recipe}</td>
+                                            <td className={styles.inventory_data}>{x.Ingrdients && x.Ingrdients.join("\n")}</td>
+                                            <td className={styles.inventory_data}>{x.CostBreakdown && x.CostBreakdown.map((v) => { return (
                                                 "Inventory " + v.Inventory + "\n" +
                                                 "Employee " + v.Employee + "\n" +
                                                 "Land " + v.Land + "\n" +
