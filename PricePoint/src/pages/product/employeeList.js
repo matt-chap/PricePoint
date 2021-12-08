@@ -1,18 +1,19 @@
 import React from 'react'
-import styles from './ingredientsList.module.scss'
+import styles from './employeeList.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
 
-const ingredients = [
-    {IngredientId: 0, Ingredient:"Buns"},
-    {IngredientId: 1, Ingredient:"Potatoes"},
-    {IngredientId: 2, Ingredient:"Lettuce"},
-    {IngredientId: 3, Ingredient:"Tomato"}
+const recipes = [
+    {EmployeeId: 0, Name:"Burger", Salary: 10000},
+    {EmployeeId: 1, Name:"Burger", Salary: 10000},
+    {EmployeeId: 2, Name:"Burger", Salary: 10000},
+    {EmployeeId: 3, Name:"Burger", Salary: 10000}
 ]
 
-export const IngredientList = () => {
+
+export const EmployeeList = () => {
     return (
-        <Col sm={11} md={11} lg={11} className={styles.ingredient_background}>
-            <h1>Ingredient List</h1>
+        <Col sm={11} md={11} lg={11} className={styles.employee_background}>
+            <h1>Employee List</h1>
             <Row className={styles.row_padding}>
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
                 <Col sm={12} md={8} lg={8} className={styles.center_align_items}></Col>
@@ -23,15 +24,16 @@ export const IngredientList = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th className={styles.ingredient_data}>Ingrdient</th>
+                                    <th className={styles.recipe_data}>Name</th>
+                                    <th className={styles.recipe_data}>Salary</th>
                                 </tr>
                             </thead>
-                            {/*TODO: Make list Editable*/}
                             <tbody>
-                                {ingredients && ingredients.map((x) => {
+                                {recipes && recipes.map((x) => {
                                     return (
-                                        <tr key={x.IngredientId}>
-                                            <td className={styles.ingredient_data}>{x.Ingredient}</td>
+                                        <tr key={x.RecipeId}>
+                                            <td className={styles.recipe_data}>{x.Name}</td>
+                                            <td className={styles.recipe_data}>{x.Salary}</td>
                                         </tr>
                                     )
                                 }

@@ -1,6 +1,6 @@
 @import "../../styles/utilities/variables";
 
-.ingredient_background {
+.employee_background {
     font-size: calc(20px + .75vmin);
     color: $color_white;
 }
@@ -21,7 +21,7 @@
     padding: 20px 0px;
 }
 
-.ingredient_data{
+.recipe_data{
     font-size: calc(10px + .75vmin);
     color: $color_white;
     white-space: pre-wrap;

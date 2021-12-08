@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './inventoryList.module.scss'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Table, Row, Col } from 'react-bootstrap'
 
 const inventory = [
     {InventoryId: 0, IngredientId: 0, CurrentStock: 10, ClosestExperationDate:"12/12/2021"},
@@ -10,9 +10,9 @@ const inventory = [
 ]
 
 
-export const InventoryPage = () => {
+export const InventoryList = () => {
     return (
-        <Col sm={11} md={11} lg={11} className={styles.recipe_background}>
+        <Col sm={11} md={11} lg={11} className={styles.inventory_background}>
             <h1>Inventory List</h1>
             <Row className={styles.row_padding}>
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
