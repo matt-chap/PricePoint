@@ -14,6 +14,7 @@ import { IngredientList } from './pages/product/ingredientList'
 import { InventoryList } from './pages/product/inventoryList'
 import { RecipeList } from './pages/product/recipeList'
 import { EmployeeList } from './pages/product/employeeList'
+import { PricePoint } from './pages/product/pricePoint'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -29,6 +30,7 @@ ReactDOM.render(
           <Route path="/internalLayout/inventory" element={<InventoryList />} />
           <Route path="/internalLayout/recipe" element={<RecipeList />} />
           <Route path="/internalLayout/employee" element={<EmployeeList />} />
+          <Route path="/internalLayout/pricePoint" element={<PricePoint />} />
         </Route>
         <Route path="/*" element={<Error404 />} />
       </Route>

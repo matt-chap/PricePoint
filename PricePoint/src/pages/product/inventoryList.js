@@ -1,14 +1,7 @@
 import React from 'react'
 import styles from './inventoryList.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-
-const inventory = [
-    {InventoryId: 0, IngredientId: 0, CurrentStock: 10, ClosestExperationDate:"12/12/2021"},
-    {InventoryId: 1, IngredientId: 1, CurrentStock: 10, ClosestExperationDate:"12/12/2021"},
-    {InventoryId: 2, IngredientId: 2, CurrentStock: 10, ClosestExperationDate:"12/12/2021"},
-    {InventoryId: 3, IngredientId: 3, CurrentStock: 10, ClosestExperationDate:"12/12/2021"}
-]
-
+import { fakeInventory } from '../../data/fakeData'
 
 export const InventoryList = () => {
     return (
@@ -30,7 +23,7 @@ export const InventoryList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {inventory && inventory.map((x) => {
+                                {fakeInventory && fakeInventory.map((x) => {
                                     return (
                                         <tr key={x.InventoryId}>
                                             <td className={styles.inventory_data}>{x.IngredientId}</td>

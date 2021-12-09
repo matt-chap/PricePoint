@@ -1,0 +1,28 @@
+@import "../../styles/utilities/variables";
+
+.recipe_background {
+    font-size: calc(20px + .75vmin);
+    color: $color_white;
+}
+
+.center_align_items {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.row_padding {
+    padding-bottom: 5vh;
+}
+
+.flex_reverse {
+    flex-direction: row-reverse;
+    display: flex;
+    padding: 20px 0px;
+}
+
+.recipe_data{
+    font-size: calc(10px + .75vmin);
+    color: $color_white;
+    white-space: pre-wrap;
+}

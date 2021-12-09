@@ -1,13 +1,7 @@
 import React from 'react'
 import styles from './ingredientsList.module.scss'
+import { fakeIngredients } from '../../data/fakeData'
 import { Table, Row, Col } from 'react-bootstrap'
-
-const ingredients = [
-    {IngredientId: 0, Ingredient:"Buns"},
-    {IngredientId: 1, Ingredient:"Potatoes"},
-    {IngredientId: 2, Ingredient:"Lettuce"},
-    {IngredientId: 3, Ingredient:"Tomato"}
-]
 
 export const IngredientList = () => {
     return (
@@ -28,7 +22,7 @@ export const IngredientList = () => {
                             </thead>
                             {/*TODO: Make list Editable*/}
                             <tbody>
-                                {ingredients && ingredients.map((x) => {
+                                {fakeIngredients && fakeIngredients.map((x) => {
                                     return (
                                         <tr key={x.IngredientId}>
                                             <td className={styles.ingredient_data}>{x.Ingredient}</td>

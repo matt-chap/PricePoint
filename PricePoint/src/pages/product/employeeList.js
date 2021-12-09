@@ -1,14 +1,7 @@
 import React from 'react'
 import styles from './employeeList.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-
-const recipes = [
-    {EmployeeId: 0, Name:"Burger", Salary: 10000},
-    {EmployeeId: 1, Name:"Burger", Salary: 10000},
-    {EmployeeId: 2, Name:"Burger", Salary: 10000},
-    {EmployeeId: 3, Name:"Burger", Salary: 10000}
-]
-
+import { fakeEmployees } from '../../data/fakeData'
 
 export const EmployeeList = () => {
     return (
@@ -29,7 +22,7 @@ export const EmployeeList = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {recipes && recipes.map((x) => {
+                                {fakeEmployees && fakeEmployees.map((x) => {
                                     return (
                                         <tr key={x.RecipeId}>
                                             <td className={styles.recipe_data}>{x.Name}</td>

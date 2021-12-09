@@ -1,12 +1,14 @@
 import React from 'react'
-import styles from './recipeList.module.scss'
+import styles from './pricePoint.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-import { fakeRecipes } from '../../data/fakeData'
+import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory } from '../../data/fakeData'
 
-export const RecipeList = () => {
+
+
+export const PricePoint = () => {
     return (
         <Col sm={11} md={11} lg={11} className={styles.recipe_background}>
-            <h1>Recipe List</h1>
+            <h1>Price Point</h1>
             <Row className={styles.row_padding}>
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
                 <Col sm={12} md={8} lg={8} className={styles.center_align_items}></Col>
@@ -26,11 +28,7 @@ export const RecipeList = () => {
                                     return (
                                         <tr key={x.RecipeId}>
                                             <td className={styles.recipe_data}>{x.Recipe}</td>
-                                            <td className={styles.recipe_data}>{x.Ingrdients && x.Ingrdients.map((v) => { return (
-                                                "IngredientId " + v.IngredientId + "\n" +
-                                                "Amount Type " + v.AmountType + "\n" +
-                                                "Amount " + v.Amount + "\n" 
-                                            )})}</td>
+                                            <td className={styles.recipe_data}>{x.Ingrdients && x.Ingrdients.join("\n")}</td>
                                         </tr>
                                     )
                                 }
