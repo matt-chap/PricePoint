@@ -29,7 +29,7 @@ export const fakeInventory = [
     {
         InventoryId: 0,
         IngredientId: 0,
-        CurrentStock: 10,
+        AmountBought: 10,
         Cost: 10,
         AmountType: 0,
         ClosestExperationDate: "08/01/2021"
@@ -37,7 +37,7 @@ export const fakeInventory = [
     {
         InventoryId: 1,
         IngredientId: 1,
-        CurrentStock: 15,
+        AmountBought: 15,
         Cost: 10,
         AmountType: 0,
         ClosestExperationDate: "09/01/2021"
@@ -45,7 +45,7 @@ export const fakeInventory = [
     {
         InventoryId: 2,
         IngredientId: 2,
-        CurrentStock: 20,
+        AmountBought: 20,
         Cost: 10,
         AmountType: 0,
         ClosestExperationDate: "10/01/2021"
@@ -53,7 +53,7 @@ export const fakeInventory = [
     {
         InventoryId: 3,
         IngredientId: 3,
-        CurrentStock: 25,
+        AmountBought: 25,
         Cost: 10,
         AmountType: 0,
         ClosestExperationDate: "11/01/2021"
@@ -149,5 +149,6 @@ export const fakeEmployees = [
 export const AmountType = {
     POUNDS: 0,
     BAG: 1,
-    SINGLE: 2
+    SINGLE: 2,
+    UNKOWN: 3
 }

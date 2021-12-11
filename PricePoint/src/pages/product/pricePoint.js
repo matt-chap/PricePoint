@@ -11,6 +11,26 @@ var test = fakeInventory.map(x => {
     })
 })
 
+var recipeTransformed = fakeRecipes.map(x => {
+    return({
+        RecipeId: x.RecipeId,
+        RecipeName: x.Recipe,
+        Ingredients: x.Ingrdients.map(y => {
+            let inv = fakeInventory.filter(z => z.IngredientId == y.IngredientId)[0];
+            let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
+            return({
+                IngredientName: ing.Ingredient,
+                OldestExpireDate: inv?.ClosestExperationDate ?? "Never bought",
+                AmountBought: inv?.AmountBought ?? "Never bought",
+                AmountCost: inv?.Cost ?? "Never bought",
+                AmountType: AmountType[inv?.AmountType ?? AmountType.UNKOWN],
+                RecipeAmount: ing.Amount,
+                RecipeAmountType: AmountType[y.AmountType]
+            })
+        })
+    })
+})
+
 
 export const PricePoint = () => {
     return (
@@ -26,16 +46,18 @@ export const PricePoint = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th className={styles.recipe_data}>IngredientId</th>
+                                    <th className={styles.recipe_data}>RecipeId</th>
                                     <th className={styles.recipe_data}>Name</th>
+                                    <th className={styles.recipe_data}>IngrdientInfo</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {test && test.map((x) => {
+                                {recipeTransformed && recipeTransformed.map((x) => {
                                     return (
-                                        <tr key={x.IngredientId}>
-                                            <td className={styles.recipe_data}>{x.IngredientId}</td>
-                                            <td className={styles.recipe_data}>{x.Name}</td>
+                                        <tr key={x.RecipeId}>
+                                            <td className={styles.recipe_data}>{x.RecipeId}</td>
+                                            <td className={styles.recipe_data}>{x.RecipeName}</td>
+                                            <td className={styles.recipe_data}>{JSON.stringify(x.Ingredients)}</td>
                                         </tr>
                                     )
                                 }
