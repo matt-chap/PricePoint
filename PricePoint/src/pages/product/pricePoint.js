@@ -12,20 +12,20 @@ var test = fakeInventory.map(x => {
 })
 
 var recipeTransformed = fakeRecipes.map(x => {
-    return({
+    return ({
         RecipeId: x.RecipeId,
         RecipeName: x.Recipe,
         Ingredients: x.Ingrdients.map(y => {
             let inv = fakeInventory.filter(z => z.IngredientId == y.IngredientId)[0];
             let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
-            return({
+            return ({
                 IngredientName: ing.Ingredient,
                 OldestExpireDate: inv?.ClosestExperationDate ?? "Never bought",
                 AmountBought: inv?.AmountBought ?? "Never bought",
                 AmountCost: inv?.Cost ?? "Never bought",
-                AmountType: AmountType[inv?.AmountType ?? AmountType.UNKOWN],
-                RecipeAmount: ing.Amount,
-                RecipeAmountType: AmountType[y.AmountType]
+                AmountType: Object.keys(AmountType)[inv?.AmountType ?? AmountType.UNKOWN],
+                RecipeAmount: y.Amount,
+                RecipeAmountType: Object.keys(AmountType)[y.AmountType]
             })
         })
     })
@@ -42,30 +42,42 @@ export const PricePoint = () => {
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
             </Row>
             <Row className={styles.row_padding}>
-                    <Col xs sm lg className={styles.center_align_items}>
-                        <Table striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th className={styles.recipe_data}>RecipeId</th>
-                                    <th className={styles.recipe_data}>Name</th>
-                                    <th className={styles.recipe_data}>IngrdientInfo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {recipeTransformed && recipeTransformed.map((x) => {
-                                    return (
-                                        <tr key={x.RecipeId}>
-                                            <td className={styles.recipe_data}>{x.RecipeId}</td>
-                                            <td className={styles.recipe_data}>{x.RecipeName}</td>
-                                            <td className={styles.recipe_data}>{JSON.stringify(x.Ingredients)}</td>
-                                        </tr>
-                                    )
-                                }
-                                )}
-                            </tbody>
-                        </Table>
-                    </Col>
-                </Row>
+                <Col xs sm lg className={styles.center_align_items}>
+                    <Table striped bordered hover>
+                        <thead>
+                            <tr>
+                                <th className={styles.recipe_data}>RecipeId</th>
+                                <th className={styles.recipe_data}>Name</th>
+                                <th className={styles.recipe_data}>IngrdientInfo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {recipeTransformed && recipeTransformed.map((x) => {
+                                return (
+                                    <tr key={x.RecipeId}>
+                                        <td className={styles.recipe_data}>{x.RecipeId}</td>
+                                        <td className={styles.recipe_data}>{x.RecipeName}</td>
+                                        <td className={styles.recipe_data}>{x.Ingredients.map((y) => {
+                                            return (
+                                                <div>
+                                                    <div className={styles.ingredient_name}>{y.IngredientName}</div>
+                                                    <div>Expire Date: {y.OldestExpireDate}</div>
+                                                    <div>Amount Bought: {y.AmountBought}</div>
+                                                    <div>Amount Cost: {y.AmountCost}</div>
+                                                    <div>Amount Type: {y.AmountType}</div>
+                                                    <div>Recipe Amount: {y.RecipeAmount}</div>
+                                                    <div>Recipe Type: {y.RecipeAmountType}</div>
+                                                </div>
+                                            )
+                                        })}</td>
+                                    </tr>
+                                )
+                            }
+                            )}
+                        </tbody>
+                    </Table>
+                </Col>
+            </Row>
         </Col>
     )
 }

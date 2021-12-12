@@ -26,3 +26,11 @@
     color: $color_white;
     white-space: pre-wrap;
 }
+
+.ingredient_name {
+    font-size: calc(15px + .75vmin);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: aquamarine 1px solid;
+}
