@@ -46,18 +46,18 @@ export const PricePoint = () => {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                                <th className={styles.recipe_data}>RecipeId</th>
-                                <th className={styles.recipe_data}>Name</th>
-                                <th className={styles.recipe_data}>IngrdientInfo</th>
+                                <th className={styles.table_recipe_name}>RecipeId</th>
+                                <th className={styles.table_recipe_name}>Name</th>
+                                <th className={styles.table_recipe_data}>IngrdientInfo</th>
                             </tr>
                         </thead>
                         <tbody>
                             {recipeTransformed && recipeTransformed.map((x) => {
                                 return (
                                     <tr key={x.RecipeId}>
-                                        <td className={styles.recipe_data}>{x.RecipeId}</td>
-                                        <td className={styles.recipe_data}>{x.RecipeName}</td>
-                                        <td className={styles.recipe_data}>{x.Ingredients.map((y) => {
+                                        <td className={styles.table_recipe_name}>{x.RecipeId}</td>
+                                        <td className={styles.table_recipe_name}>{x.RecipeName}</td>
+                                        <td className={styles.table_recipe_data}>{x.Ingredients.map((y) => {
                                             return (
                                                 <div>
                                                     <div className={styles.ingredient_name}>{y.IngredientName}</div>

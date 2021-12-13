@@ -21,7 +21,14 @@
     padding: 20px 0px;
 }
 
-.recipe_data{
+.table_recipe_name{
+    font-size: calc(10px + .75vmin);
+    color: $color_white;
+    white-space: pre-wrap;
+    width: 15%;
+}
+
+.table_recipe_data{
     font-size: calc(10px + .75vmin);
     color: $color_white;
     white-space: pre-wrap;

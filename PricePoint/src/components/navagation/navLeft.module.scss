@@ -6,6 +6,8 @@
     color: $color_white;
     padding-top: 3vh;
     padding-bottom: 5vh;
+    flex-direction: column;
+    height: 100%;
   }
 
   .nav_link {
