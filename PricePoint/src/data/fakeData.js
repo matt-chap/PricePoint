@@ -147,8 +147,22 @@ export const fakeEmployees = [
 ]
 
 export const AmountType = {
-    POUNDS: 0,
-    BAG: 1,
-    SINGLE: 2,
-    UNKOWN: 3
+    UNKOWN: 0,
+    POUNDS: 1,
+    BAG: 2,
+    SINGLE: 3,
+    OUNCES: 4
 }
+
+export const Conversion = [
+    {
+        ConvertFrom: AmountType.POUNDS,
+        ConvertTo: AmountType.OUNCES,
+        Rate: 16
+    },
+    {
+        ConvertFrom: AmountType.POUNDS,
+        ConvertTo: AmountType.POUNDS,
+        Rate: 1
+    }
+]

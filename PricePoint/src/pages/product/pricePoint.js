@@ -1,33 +1,39 @@
 import React from 'react'
 import styles from './pricePoint.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType } from '../../data/fakeData'
-
-var test = fakeInventory.map(x => {
-    let blah = fakeIngredients.filter(y => y.IngredientId == x.IngredientId)[0];
-    return ({
-        IngredientId: blah.IngredientId,
-        Name: blah.Ingredient
-    })
-})
+import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion } from '../../data/fakeData'
 
 var recipeTransformed = fakeRecipes.map(x => {
+    let totalAmount = 0;
     return ({
         RecipeId: x.RecipeId,
         RecipeName: x.Recipe,
         Ingredients: x.Ingrdients.map(y => {
             let inv = fakeInventory.filter(z => z.IngredientId == y.IngredientId)[0];
             let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
+            let invType = inv?.AmountType ?? AmountType.UNKOWN;
+
+            let canConvert = Conversion.filter(z => (z.ConvertFrom == x.AmountType && z.ConvertTo == invType) 
+                                                || (z.ConvertFrom == invType && z.ConvertTo == x.AmountType))[0]
+            if(invType != AmountType.UNKOWN && canConvert){
+                if(canConvert.ConvertFrom == x.AmountType){
+                    totalAmount += (inv.Amount / canConvert.Rate) * y.Amount
+                }
+                else{
+                    totalAmount += (inv.Amount * canConvert.Rate) * y.Amount
+                }
+            }
             return ({
                 IngredientName: ing.Ingredient,
                 OldestExpireDate: inv?.ClosestExperationDate ?? "Never bought",
                 AmountBought: inv?.AmountBought ?? "Never bought",
                 AmountCost: inv?.Cost ?? "Never bought",
-                AmountType: Object.keys(AmountType)[inv?.AmountType ?? AmountType.UNKOWN],
+                AmountType: Object.keys(AmountType)[invType],
                 RecipeAmount: y.Amount,
                 RecipeAmountType: Object.keys(AmountType)[y.AmountType]
             })
-        })
+        }),
+        Total: totalAmount
     })
 })
 
@@ -46,7 +52,6 @@ export const PricePoint = () => {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                                <th className={styles.table_recipe_name}>RecipeId</th>
                                 <th className={styles.table_recipe_name}>Name</th>
                                 <th className={styles.table_recipe_data}>IngrdientInfo</th>
                             </tr>
@@ -55,7 +60,6 @@ export const PricePoint = () => {
                             {recipeTransformed && recipeTransformed.map((x) => {
                                 return (
                                     <tr key={x.RecipeId}>
-                                        <td className={styles.table_recipe_name}>{x.RecipeId}</td>
                                         <td className={styles.table_recipe_name}>{x.RecipeName}</td>
                                         <td className={styles.table_recipe_data}>{x.Ingredients.map((y) => {
                                             return (
@@ -67,6 +71,7 @@ export const PricePoint = () => {
                                                     <div>Amount Type: {y.AmountType}</div>
                                                     <div>Recipe Amount: {y.RecipeAmount}</div>
                                                     <div>Recipe Type: {y.RecipeAmountType}</div>
+                                                    <div>Total: {y.Total}</div>
                                                 </div>
                                             )
                                         })}</td>
