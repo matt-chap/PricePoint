@@ -13,14 +13,19 @@ var recipeTransformed = fakeRecipes.map(x => {
             let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
             let invType = inv?.AmountType ?? AmountType.UNKOWN;
 
-            let canConvert = Conversion.filter(z => (z.ConvertFrom == x.AmountType && z.ConvertTo == invType) 
-                                                || (z.ConvertFrom == invType && z.ConvertTo == x.AmountType))[0]
+            let canConvert = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType) 
+                                                || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
+
+            console.log(invType)
+            console.log(AmountType.UNKOWN)
+            console.log(canConvert)
+
             if(invType != AmountType.UNKOWN && canConvert){
                 if(canConvert.ConvertFrom == x.AmountType){
-                    totalAmount += (inv.Amount / canConvert.Rate) * y.Amount
+                    totalAmount += (inv.AmountBought * canConvert.Rate) * y.Amount
                 }
                 else{
-                    totalAmount += (inv.Amount * canConvert.Rate) * y.Amount
+                    totalAmount += (inv.AmountBought / canConvert.Rate) * y.Amount
                 }
             }
             return ({
@@ -54,6 +59,7 @@ export const PricePoint = () => {
                             <tr>
                                 <th className={styles.table_recipe_name}>Name</th>
                                 <th className={styles.table_recipe_data}>IngrdientInfo</th>
+                                <th className={styles.table_recipe_name}>Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,10 +77,10 @@ export const PricePoint = () => {
                                                     <div>Amount Type: {y.AmountType}</div>
                                                     <div>Recipe Amount: {y.RecipeAmount}</div>
                                                     <div>Recipe Type: {y.RecipeAmountType}</div>
-                                                    <div>Total: {y.Total}</div>
                                                 </div>
                                             )
                                         })}</td>
+                                        <td className={styles.table_recipe_name}>{x.Total}</td>
                                     </tr>
                                 )
                             }

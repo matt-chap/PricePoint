@@ -1,3 +1,11 @@
+export const AmountType = {
+    UNKOWN: 0,
+    POUNDS: 1,
+    BAG: 2,
+    SINGLE: 3,
+    OUNCES: 4
+}
+
 export const fakeIngredients = [
     {
         IngredientId: 0,
@@ -31,7 +39,7 @@ export const fakeInventory = [
         IngredientId: 0,
         AmountBought: 10,
         Cost: 10,
-        AmountType: 0,
+        AmountType: AmountType.POUNDS,
         ClosestExperationDate: "08/01/2021"
     },
     {
@@ -39,7 +47,7 @@ export const fakeInventory = [
         IngredientId: 1,
         AmountBought: 15,
         Cost: 10,
-        AmountType: 0,
+        AmountType: AmountType.POUNDS,
         ClosestExperationDate: "09/01/2021"
     },
     {
@@ -47,7 +55,7 @@ export const fakeInventory = [
         IngredientId: 2,
         AmountBought: 20,
         Cost: 10,
-        AmountType: 0,
+        AmountType: AmountType.POUNDS,
         ClosestExperationDate: "10/01/2021"
     },
     {
@@ -55,7 +63,7 @@ export const fakeInventory = [
         IngredientId: 3,
         AmountBought: 25,
         Cost: 10,
-        AmountType: 0,
+        AmountType: AmountType.POUNDS,
         ClosestExperationDate: "11/01/2021"
     }
 ]
@@ -68,17 +76,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 1,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             }]
     },
     {
@@ -88,17 +96,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 2,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             }]
     },
     {
@@ -108,17 +116,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 5,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: 0
+                AmountType: AmountType.OUNCES
             }]
     }
 ]
@@ -145,14 +153,6 @@ export const fakeEmployees = [
         Salary: 50000
     }
 ]
-
-export const AmountType = {
-    UNKOWN: 0,
-    POUNDS: 1,
-    BAG: 2,
-    SINGLE: 3,
-    OUNCES: 4
-}
 
 export const Conversion = [
     {
