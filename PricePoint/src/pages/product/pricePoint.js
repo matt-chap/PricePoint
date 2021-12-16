@@ -13,19 +13,18 @@ var recipeTransformed = fakeRecipes.map(x => {
             let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
             let invType = inv?.AmountType ?? AmountType.UNKOWN;
 
-            let canConvert = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType) 
+            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType) 
                                                 || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
 
-            console.log(invType)
-            console.log(AmountType.UNKOWN)
-            console.log(canConvert)
-
-            if(invType != AmountType.UNKOWN && canConvert){
-                if(canConvert.ConvertFrom == x.AmountType){
-                    totalAmount += (inv.AmountBought * canConvert.Rate) * y.Amount
+            if(invType != AmountType.UNKOWN && conversionRate){
+                let costOfInventoryItem = (inv.Cost / inv.AmountBought)
+                console.log(costOfInventoryItem)
+                if(conversionRate.ConvertFrom == x.AmountType){
+                    let p
+                    totalAmount += (costOfInventoryItem * conversionRate.Rate) * y.Amount
                 }
                 else{
-                    totalAmount += (inv.AmountBought / canConvert.Rate) * y.Amount
+                    totalAmount += (costOfInventoryItem / conversionRate.Rate) * y.Amount
                 }
             }
             return ({
