@@ -13,17 +13,17 @@ var recipeTransformed = fakeRecipes.map(x => {
             let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
             let invType = inv?.AmountType ?? AmountType.UNKOWN;
 
-            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType) 
-                                                || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
+            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType)
+                || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
 
-            if(invType != AmountType.UNKOWN && conversionRate){
+            if (invType != AmountType.UNKOWN && conversionRate) {
                 let costOfInventoryItem = (inv.Cost / inv.AmountBought)
                 console.log(costOfInventoryItem)
-                if(conversionRate.ConvertFrom == x.AmountType){
+                if (conversionRate.ConvertFrom == x.AmountType) {
                     let p
                     totalAmount += (costOfInventoryItem * conversionRate.Rate) * y.Amount
                 }
-                else{
+                else {
                     totalAmount += (costOfInventoryItem / conversionRate.Rate) * y.Amount
                 }
             }
@@ -68,14 +68,20 @@ export const PricePoint = () => {
                                         <td className={styles.table_recipe_name}>{x.RecipeName}</td>
                                         <td className={styles.table_recipe_data}>{x.Ingredients.map((y) => {
                                             return (
-                                                <div>
+                                                <div className={styles.ingredient_container}>
                                                     <div className={styles.ingredient_name}>{y.IngredientName}</div>
-                                                    <div>Expire Date: {y.OldestExpireDate}</div>
-                                                    <div>Amount Bought: {y.AmountBought}</div>
-                                                    <div>Amount Cost: {y.AmountCost}</div>
-                                                    <div>Amount Type: {y.AmountType}</div>
-                                                    <div>Recipe Amount: {y.RecipeAmount}</div>
-                                                    <div>Recipe Type: {y.RecipeAmountType}</div>
+                                                    <div className={styles.ingredient_columns}>
+                                                        <div className={styles.ingredient_sub_header}>Inventory</div>
+                                                        <div>Expire Date: {y.OldestExpireDate}</div>
+                                                        <div>Amount Bought: {y.AmountBought}</div>
+                                                        <div>Amount Cost: {y.AmountCost}</div>
+                                                        <div>Amount Type: {y.AmountType}</div>
+                                                    </div>
+                                                    <div className={styles.ingredient_columns}>
+                                                        <div className={styles.ingredient_sub_header}>Recipe</div>
+                                                        <div>Recipe Amount: {y.RecipeAmount}</div>
+                                                        <div>Recipe Type: {y.RecipeAmountType}</div>
+                                                    </div>
                                                 </div>
                                             )
                                         })}</td>

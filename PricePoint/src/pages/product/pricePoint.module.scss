@@ -40,4 +40,28 @@
     font-weight: bold;
     text-align: center;
     border-bottom: aquamarine 1px solid;
+    /*display: flex;
+    width: 100%;
+    justify-content: center;*/
+}
+
+.ingredient_container {
+    /*display: flex;
+    width: 100%;*/
+}
+
+.ingredient_sub_header {
+    font-size: calc(15px + .75vmin);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: aquamarine 1px solid;
+}
+
+.ingredient_columns {
+    color: #FFFFFF;
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    padding: 2.5%;
 }
