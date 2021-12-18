@@ -9,22 +9,24 @@ var recipeTransformed = fakeRecipes.map(x => {
         RecipeId: x.RecipeId,
         RecipeName: x.Recipe,
         Ingredients: x.Ingrdients.map(y => {
-            let inv = fakeInventory.filter(z => z.IngredientId == y.IngredientId)[0];
-            let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0];
-            let invType = inv?.AmountType ?? AmountType.UNKOWN;
+            let inv = fakeInventory.filter(z => z.IngredientId == y.IngredientId)[0]
+            let ing = fakeIngredients.filter(z => z.IngredientId == y.IngredientId)[0]
+            let invType = inv?.AmountType ?? AmountType.UNKOWN
+            let totalPerIngredient = 0
 
             let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType)
                 || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
 
             if (invType != AmountType.UNKOWN && conversionRate) {
                 let costOfInventoryItem = (inv.Cost / inv.AmountBought)
-                console.log(costOfInventoryItem)
+                
                 if (conversionRate.ConvertFrom == x.AmountType) {
-                    let p
-                    totalAmount += (costOfInventoryItem * conversionRate.Rate) * y.Amount
+                    totalPerIngredient = (costOfInventoryItem * conversionRate.Rate) * y.Amount
+                    totalAmount += totalPerIngredient
                 }
                 else {
-                    totalAmount += (costOfInventoryItem / conversionRate.Rate) * y.Amount
+                    totalPerIngredient = (costOfInventoryItem / conversionRate.Rate) * y.Amount
+                    totalAmount += totalPerIngredient
                 }
             }
             return ({
@@ -34,7 +36,8 @@ var recipeTransformed = fakeRecipes.map(x => {
                 AmountCost: inv?.Cost ?? "Never bought",
                 AmountType: Object.keys(AmountType)[invType],
                 RecipeAmount: y.Amount,
-                RecipeAmountType: Object.keys(AmountType)[y.AmountType]
+                RecipeAmountType: Object.keys(AmountType)[y.AmountType],
+                RecipeTotal: totalPerIngredient
             })
         }),
         Total: totalAmount
@@ -78,9 +81,10 @@ export const PricePoint = () => {
                                                         <div>Amount Type: {y.AmountType}</div>
                                                     </div>
                                                     <div className={styles.ingredient_columns}>
-                                                        <div className={styles.ingredient_sub_header}>Recipe</div>
-                                                        <div>Recipe Amount: {y.RecipeAmount}</div>
-                                                        <div>Recipe Type: {y.RecipeAmountType}</div>
+                                                        <div className={styles.ingredient_sub_header}>Ingredient</div>
+                                                        <div>Amount: {y.RecipeAmount}</div>
+                                                        <div>Type: {y.RecipeAmountType}</div>
+                                                        <div>Total: {y.RecipeTotal}</div>
                                                     </div>
                                                 </div>
                                             )
