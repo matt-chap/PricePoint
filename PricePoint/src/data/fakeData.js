@@ -1,9 +1,12 @@
 export const AmountType = {
     UNKOWN: 0,
     POUNDS: 1,
-    BAG: 2,
-    SINGLE: 3,
-    OUNCES: 4
+    SINGLE: 2,
+    OUNCES: 4,
+    PACK_16: 5,
+    PACK_12: 6,
+    PACK_8: 7,
+    PACK_4: 8
 }
 
 export const fakeIngredients = [
@@ -39,7 +42,7 @@ export const fakeInventory = [
         IngredientId: 0,
         AmountBought: 10,
         Cost: 10,
-        AmountType: AmountType.POUNDS,
+        AmountType: AmountType.PACK_8,
         ClosestExperationDate: "08/01/2021"
     },
     {
@@ -65,6 +68,14 @@ export const fakeInventory = [
         Cost: 10,
         AmountType: AmountType.POUNDS,
         ClosestExperationDate: "11/01/2021"
+    },
+    {
+        InventoryId: 4,
+        IngredientId: 5,
+        AmountBought: 1,
+        Cost: 12,
+        AmountType: AmountType.POUNDS,
+        ClosestExperationDate: "11/01/2021"
     }
 ]
 
@@ -76,7 +87,7 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 1,
@@ -96,7 +107,7 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 2,
@@ -116,7 +127,7 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 5,
@@ -164,5 +175,10 @@ export const Conversion = [
         ConvertFrom: AmountType.POUNDS,
         ConvertTo: AmountType.POUNDS,
         Rate: 1
+    },
+    {
+        ConvertFrom: AmountType.PACK_8,
+        ConvertTo: AmountType.SINGLE,
+        Rate: 8
     }
 ]
