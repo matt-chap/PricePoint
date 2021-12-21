@@ -2,11 +2,11 @@ export const AmountType = {
     UNKOWN: 0,
     POUNDS: 1,
     SINGLE: 2,
-    OUNCES: 4,
-    PACK_16: 5,
-    PACK_12: 6,
-    PACK_8: 7,
-    PACK_4: 8
+    OUNCES: 3,
+    PACK_16: 4,
+    PACK_12: 5,
+    PACK_8: 6,
+    PACK_4: 7
 }
 
 export const fakeIngredients = [
@@ -87,17 +87,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.SINGLE
+                Type: AmountType.SINGLE
             },
             {
                 IngredientId: 1,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             }]
     },
     {
@@ -107,17 +107,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.SINGLE
+                Type: AmountType.SINGLE
             },
             {
                 IngredientId: 2,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             }]
     },
     {
@@ -127,17 +127,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                AmountType: AmountType.SINGLE
+                Type: AmountType.SINGLE
             },
             {
                 IngredientId: 5,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                AmountType: AmountType.OUNCES
+                Type: AmountType.OUNCES
             }]
     }
 ]

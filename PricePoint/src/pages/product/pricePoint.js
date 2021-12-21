@@ -14,8 +14,8 @@ var recipeTransformed = fakeRecipes.map(x => {
             let invType = inv?.AmountType ?? AmountType.UNKOWN
             let totalPerIngredient = 0
 
-            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType)
-                || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
+            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.Type && z.ConvertTo == invType)
+                || (z.ConvertFrom == invType && z.ConvertTo == y.Type))[0]
 
             if (invType != AmountType.UNKOWN && conversionRate) {
                 let costOfInventoryItem = (inv.Cost / inv.AmountBought)
@@ -36,7 +36,7 @@ var recipeTransformed = fakeRecipes.map(x => {
                 AmountCost: inv?.Cost ?? "Never bought",
                 AmountType: Object.keys(AmountType)[invType],
                 RecipeAmount: y.Amount,
-                RecipeAmountType: Object.keys(AmountType)[y.AmountType],
+                RecipeAmountType: Object.keys(AmountType)[y.Type],
                 RecipeTotal: totalPerIngredient
             })
         }),
@@ -49,11 +49,6 @@ export const PricePoint = () => {
     return (
         <Col sm={11} md={11} lg={11} className={styles.recipe_background}>
             <h1>Price Point</h1>
-            <Row className={styles.row_padding}>
-                <Col sm={0} md={2} lg={2} className={styles.center_align_items}>test</Col>
-                <Col sm={12} md={8} lg={8} className={styles.center_align_items}></Col>
-                <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
-            </Row>
             <Row className={styles.row_padding}>
                 <Col xs sm lg className={styles.center_align_items}>
                     <Table striped bordered hover>
