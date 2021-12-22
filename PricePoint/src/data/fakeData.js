@@ -177,8 +177,23 @@ export const Conversion = [
         Rate: 1
     },
     {
+        ConvertFrom: AmountType.PACK_4,
+        ConvertTo: AmountType.SINGLE,
+        Rate: 4
+    },
+    {
         ConvertFrom: AmountType.PACK_8,
         ConvertTo: AmountType.SINGLE,
         Rate: 8
+    },
+    {
+        ConvertFrom: AmountType.PACK_12,
+        ConvertTo: AmountType.SINGLE,
+        Rate: 12
+    },
+    {
+        ConvertFrom: AmountType.PACK_16,
+        ConvertTo: AmountType.SINGLE,
+        Rate: 16
     }
 ]

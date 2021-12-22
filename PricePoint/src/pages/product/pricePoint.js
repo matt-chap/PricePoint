@@ -40,6 +40,7 @@ var recipeTransformed = fakeRecipes.map(x => {
                 RecipeTotal: totalPerIngredient
             })
         }),
+        ExtraExpenses: 0,
         Total: totalAmount
     })
 })
@@ -55,7 +56,8 @@ export const PricePoint = () => {
                         <thead>
                             <tr>
                                 <th className={styles.table_recipe_name}>Name</th>
-                                <th className={styles.table_recipe_data}>IngrdientInfo</th>
+                                <th className={styles.table_recipe_data}>Ingrdient Info</th>
+                                <th className={styles.table_recipe_data}>Extra Expenses</th>
                                 <th className={styles.table_recipe_name}>Total</th>
                             </tr>
                         </thead>
@@ -84,6 +86,7 @@ export const PricePoint = () => {
                                                 </div>
                                             )
                                         })}</td>
+                                        <td className={styles.table_recipe_name}>{x.ExtraExpenses}</td>
                                         <td className={styles.table_recipe_name}>{x.Total}</td>
                                     </tr>
                                 )
