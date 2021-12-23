@@ -1,9 +1,17 @@
 import React from 'react'
 import styles from './pricePoint.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion } from '../../data/fakeData'
+import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion, fakeFees } from '../../data/fakeData'
 
 var recipeTransformed = fakeRecipes.map(x => {
+    let totalEmployeeExpense = fakeEmployees.map(x => x.Salary).reduce(function (previousValue, currentValue) {
+        return previousValue + currentValue
+    }, 0);
+
+    let totalFees = fakeFees.map(x => x.MonthlyFee).reduce(function (previousValue, currentValue) {
+        return previousValue + currentValue
+    }, 0);
+
     let totalAmount = 0;
     return ({
         RecipeId: x.RecipeId,
@@ -19,7 +27,7 @@ var recipeTransformed = fakeRecipes.map(x => {
 
             if (invType != AmountType.UNKOWN && conversionRate) {
                 let costOfInventoryItem = (inv.Cost / inv.AmountBought)
-                
+
                 if (conversionRate.ConvertFrom == x.AmountType) {
                     totalPerIngredient = (costOfInventoryItem * conversionRate.Rate) * y.Amount
                     totalAmount += totalPerIngredient
@@ -40,7 +48,8 @@ var recipeTransformed = fakeRecipes.map(x => {
                 RecipeTotal: totalPerIngredient
             })
         }),
-        ExtraExpenses: 0,
+        EmployeeExpense: totalEmployeeExpense,
+        FeeExpenses: totalFees,
         Total: totalAmount
     })
 })
@@ -86,7 +95,18 @@ export const PricePoint = () => {
                                                 </div>
                                             )
                                         })}</td>
-                                        <td className={styles.table_recipe_name}>{x.ExtraExpenses}</td>
+                                        <td className={styles.table_recipe_name}>
+                                            <div className={styles.ingredient_container}>
+                                                <div className={styles.ingredient_columns}>
+                                                    <div className={styles.ingredient_sub_header}>Employee Expense</div>
+                                                    <div>Amount: {x.EmployeeExpense}</div>
+                                                </div>
+                                                <div className={styles.ingredient_columns}>
+                                                    <div className={styles.ingredient_sub_header}>Fee Expense</div>
+                                                    <div>Amount: {x.FeeExpenses}</div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td className={styles.table_recipe_name}>{x.Total}</td>
                                     </tr>
                                 )

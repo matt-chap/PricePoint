@@ -165,6 +165,19 @@ export const fakeEmployees = [
     }
 ]
 
+export const fakeFees = [
+    {
+        FeeID: 0,
+        FeeName: "Fee",
+        MonthlyFee: 200
+    },
+    {
+        FeeID: 1,
+        FeeName: "Land",
+        MonthlyFee: 1000
+    }
+]
+
 export const Conversion = [
     {
         ConvertFrom: AmountType.POUNDS,
