@@ -3,6 +3,8 @@ import styles from './pricePoint.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
 import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion, fakeFees } from '../../data/fakeData'
 
+//TODO: make a rounding function
+
 var recipeTransformed = fakeRecipes.map(x => {
     let totalEmployeeExpense = fakeEmployees.map(x => x.Salary).reduce(function (previousValue, currentValue) {
         return previousValue + currentValue
@@ -12,8 +14,8 @@ var recipeTransformed = fakeRecipes.map(x => {
         return previousValue + currentValue
     }, 0);
 
-    let totalAmount = 0;
-    totalAmount += (((totalEmployeeExpense/12)/900) + (totalFees / 900))
+    let totalAmount = (((totalEmployeeExpense / 12) / 900) + (totalFees / 900));
+    let ingredientTotal = 0
     return ({
         RecipeId: x.RecipeId,
         RecipeName: x.Recipe,
@@ -31,11 +33,11 @@ var recipeTransformed = fakeRecipes.map(x => {
 
                 if (conversionRate.ConvertFrom == x.AmountType) {
                     totalPerIngredient = (costOfInventoryItem * conversionRate.Rate) * y.Amount
-                    totalAmount += totalPerIngredient
+                    ingredientTotal += totalPerIngredient
                 }
                 else {
                     totalPerIngredient = (costOfInventoryItem / conversionRate.Rate) * y.Amount
-                    totalAmount += totalPerIngredient
+                    ingredientTotal += totalPerIngredient
                 }
             }
             return ({
@@ -49,9 +51,10 @@ var recipeTransformed = fakeRecipes.map(x => {
                 RecipeTotal: totalPerIngredient
             })
         }),
+        IngredientTotal: ingredientTotal,
         EmployeeExpense: totalEmployeeExpense,
         FeeExpenses: totalFees,
-        Total: totalAmount
+        Total: totalAmount + ingredientTotal
     })
 })
 
@@ -102,7 +105,7 @@ export const PricePoint = () => {
                                                     <div className={styles.ingredient_sub_header}>Employee Expense</div>
                                                     <div>
                                                         <div>Total: {x.EmployeeExpense} per year</div>
-                                                        <div>{x.EmployeeExpense/12} / 900 sold per month = {(x.EmployeeExpense/12)/900}</div>
+                                                        <div>{x.EmployeeExpense / 12} / 900 sold per month = {(x.EmployeeExpense / 12) / 900}</div>
                                                     </div>
                                                 </div>
                                                 <div className={styles.ingredient_columns}>
@@ -114,7 +117,18 @@ export const PricePoint = () => {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className={styles.table_recipe_name}>{x.Total}</td>
+                                        <td className={styles.table_recipe_name}>
+                                            <div className={styles.ingredient_columns}>
+                                                <div className={styles.ingredient_name}>Percentages</div>
+                                                
+                                                <div>
+                                                <div className={styles.ingredient_sub_header}>{x.Total}</div>
+                                                    <div>Ingredients: {Math.floor((x.IngredientTotal / x.Total) * 10000) / 100}%</div>
+                                                    <div>Employee: {Math.floor((((x.EmployeeExpense / 12) / 900)/ x.Total) * 10000) / 100}%</div>
+                                                    <div>Fees: {Math.floor(((x.FeeExpenses / 900 ) / x.Total) * 10000) / 100}%</div>
+                                                    <div></div>
+                                                </div>
+                                            </div></td>
                                     </tr>
                                 )
                             }
