@@ -13,6 +13,7 @@ var recipeTransformed = fakeRecipes.map(x => {
     }, 0);
 
     let totalAmount = 0;
+    totalAmount += (((totalEmployeeExpense/12)/900) + (totalFees / 900))
     return ({
         RecipeId: x.RecipeId,
         RecipeName: x.Recipe,
@@ -99,11 +100,17 @@ export const PricePoint = () => {
                                             <div className={styles.ingredient_container}>
                                                 <div className={styles.ingredient_columns}>
                                                     <div className={styles.ingredient_sub_header}>Employee Expense</div>
-                                                    <div>Amount: {x.EmployeeExpense}</div>
+                                                    <div>
+                                                        <div>Total: {x.EmployeeExpense} per year</div>
+                                                        <div>{x.EmployeeExpense/12} / 900 sold per month = {(x.EmployeeExpense/12)/900}</div>
+                                                    </div>
                                                 </div>
                                                 <div className={styles.ingredient_columns}>
                                                     <div className={styles.ingredient_sub_header}>Fee Expense</div>
-                                                    <div>Amount: {x.FeeExpenses}</div>
+                                                    <div>
+                                                        <div>Total: {x.FeeExpenses} per month</div>
+                                                        <div>{x.FeeExpenses} / 900 sold per month = {x.FeeExpenses / 900}</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>

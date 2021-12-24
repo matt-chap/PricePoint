@@ -156,12 +156,12 @@ export const fakeEmployees = [
     {
         EmployeeId: 2,
         Name: "Employee 3",
-        Salary: 50000
+        Salary: 25000
     },
     {
         EmployeeId: 3,
         Name: "Employee 4",
-        Salary: 50000
+        Salary: 5000
     }
 ]
 
