@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './pricePoint.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
+import {roundtoThePlace} from '../../functions/formatNumbers'
 import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion, fakeFees } from '../../data/fakeData'
 
 //TODO: make a rounding function
@@ -125,7 +126,7 @@ export const PricePoint = () => {
                                                 <div className={styles.ingredient_sub_header}>{x.Total}</div>
                                                     <div>Ingredients: {Math.floor((x.IngredientTotal / x.Total) * 10000) / 100}%</div>
                                                     <div>Employee: {Math.floor((((x.EmployeeExpense / 12) / 900)/ x.Total) * 10000) / 100}%</div>
-                                                    <div>Fees: {Math.floor(((x.FeeExpenses / 900 ) / x.Total) * 10000) / 100}%</div>
+                                                    <div>Fees: {roundtoThePlace(((x.FeeExpenses / 900 ) / x.Total), 4) * 100}%</div>
                                                     <div></div>
                                                 </div>
                                             </div></td>
