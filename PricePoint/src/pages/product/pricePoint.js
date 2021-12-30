@@ -123,10 +123,10 @@ export const PricePoint = () => {
                                                 <div className={styles.ingredient_name}>Percentages</div>
                                                 
                                                 <div>
-                                                <div className={styles.ingredient_sub_header}>{x.Total}</div>
-                                                    <div>Ingredients: {Math.floor((x.IngredientTotal / x.Total) * 10000) / 100}%</div>
-                                                    <div>Employee: {Math.floor((((x.EmployeeExpense / 12) / 900)/ x.Total) * 10000) / 100}%</div>
-                                                    <div>Fees: {roundtoThePlace(((x.FeeExpenses / 900 ) / x.Total), 4) * 100}%</div>
+                                                <div className={styles.ingredient_sub_header}>{roundtoThePlace(x.Total, 1)}</div>
+                                                    <div>Ingredients: {roundtoThePlace((x.IngredientTotal / x.Total), 1) * 100}%</div>
+                                                    <div>Employee: {roundtoThePlace((((x.EmployeeExpense / 12) / 900)/ x.Total), 1) * 100}%</div>
+                                                    <div>Fees: {roundtoThePlace(((x.FeeExpenses / 900 ) / x.Total), 1) * 100}%</div>
                                                     <div></div>
                                                 </div>
                                             </div></td>
