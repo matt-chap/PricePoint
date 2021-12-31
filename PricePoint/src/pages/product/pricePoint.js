@@ -95,7 +95,7 @@ export const PricePoint = () => {
                                                         <div className={styles.ingredient_sub_header}>Ingredient</div>
                                                         <div>Amount: {y.RecipeAmount}</div>
                                                         <div>Type: {y.RecipeAmountType}</div>
-                                                        <div>Total: {y.RecipeTotal}</div>
+                                                        <div>Total: {roundtoThePlace(y.RecipeTotal, 4)}</div>
                                                     </div>
                                                 </div>
                                             )
@@ -106,14 +106,14 @@ export const PricePoint = () => {
                                                     <div className={styles.ingredient_sub_header}>Employee Expense</div>
                                                     <div>
                                                         <div>Total: {x.EmployeeExpense} per year</div>
-                                                        <div>{x.EmployeeExpense / 12} / 900 sold per month = {(x.EmployeeExpense / 12) / 900}</div>
+                                                        <div>{roundtoThePlace((x.EmployeeExpense / 12), 2)} / 900 sold per month = {roundtoThePlace((x.EmployeeExpense / 12) / 900)}</div>
                                                     </div>
                                                 </div>
                                                 <div className={styles.ingredient_columns}>
                                                     <div className={styles.ingredient_sub_header}>Fee Expense</div>
                                                     <div>
                                                         <div>Total: {x.FeeExpenses} per month</div>
-                                                        <div>{x.FeeExpenses} / 900 sold per month = {x.FeeExpenses / 900}</div>
+                                                        <div>{x.FeeExpenses} / 900 sold per month = {roundtoThePlace((x.FeeExpenses / 900), 2)}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,10 +123,10 @@ export const PricePoint = () => {
                                                 <div className={styles.ingredient_name}>Percentages</div>
                                                 
                                                 <div>
-                                                <div className={styles.ingredient_sub_header}>{roundtoThePlace(x.Total, 1)}</div>
-                                                    <div>Ingredients: {roundtoThePlace((x.IngredientTotal / x.Total), 1) * 100}%</div>
-                                                    <div>Employee: {roundtoThePlace((((x.EmployeeExpense / 12) / 900)/ x.Total), 1) * 100}%</div>
-                                                    <div>Fees: {roundtoThePlace(((x.FeeExpenses / 900 ) / x.Total), 1) * 100}%</div>
+                                                <div className={styles.ingredient_sub_header}>${roundtoThePlace(x.Total, 2)}</div>
+                                                    <div>Ingredients: {roundtoThePlace((x.IngredientTotal / x.Total), 2) * 100}%</div>
+                                                    <div>Employee: {roundtoThePlace((((x.EmployeeExpense / 12) / 900)/ x.Total), 2) * 100}%</div>
+                                                    <div>Fees: {roundtoThePlace(((x.FeeExpenses / 900 ) / x.Total), 2) * 100}%</div>
                                                     <div></div>
                                                 </div>
                                             </div></td>
