@@ -4,9 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap'
 import {roundtoThePlace} from '../../functions/formatNumbers'
 import { fakeEmployees, fakeRecipes, fakeIngredients, fakeInventory, AmountType, Conversion, fakeFees } from '../../data/fakeData'
 
-//TODO: make a rounding function
-
-var recipeTransformed = fakeRecipes.map(x => {
+let recipeTransformed = fakeRecipes.map(x => {
     let totalEmployeeExpense = fakeEmployees.map(x => x.Salary).reduce(function (previousValue, currentValue) {
         return previousValue + currentValue
     }, 0);
