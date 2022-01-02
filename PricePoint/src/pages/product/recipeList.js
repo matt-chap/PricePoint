@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './recipeList.module.scss'
 import { Table, Row, Col } from 'react-bootstrap'
-import { fakeRecipes } from '../../data/fakeData'
+import { fakeRecipes, AmountType } from '../../data/fakeData'
 
 export const RecipeList = () => {
     return (
@@ -28,7 +28,7 @@ export const RecipeList = () => {
                                             <td className={styles.recipe_data}>{x.Recipe}</td>
                                             <td className={styles.recipe_data}>{x.Ingrdients && x.Ingrdients.map((v) => { return (
                                                 "IngredientId " + v.IngredientId + "\n" +
-                                                "Amount Type " + v.AmountType + "\n" +
+                                                "Amount Type " + Object.keys(AmountType)[v.AmountType ] + "\n" +
                                                 "Amount " + v.Amount + "\n" 
                                             )})}</td>
                                         </tr>

@@ -87,17 +87,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                Type: AmountType.SINGLE
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 1,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             }]
     },
     {
@@ -107,17 +107,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                Type: AmountType.SINGLE
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 2,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             }]
     },
     {
@@ -127,17 +127,17 @@ export const fakeRecipes = [
             {
                 IngredientId: 0,
                 Amount: 1,
-                Type: AmountType.SINGLE
+                AmountType: AmountType.SINGLE
             },
             {
                 IngredientId: 5,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             },
             {
                 IngredientId: 3,
                 Amount: 1,
-                Type: AmountType.OUNCES
+                AmountType: AmountType.OUNCES
             }]
     }
 ]

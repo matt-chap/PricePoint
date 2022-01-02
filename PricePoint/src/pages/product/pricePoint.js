@@ -24,8 +24,8 @@ let recipeTransformed = fakeRecipes.map(x => {
             let invType = inv?.AmountType ?? AmountType.UNKOWN
             let totalPerIngredient = 0
 
-            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.Type && z.ConvertTo == invType)
-                || (z.ConvertFrom == invType && z.ConvertTo == y.Type))[0]
+            let conversionRate = Conversion.filter(z => (z.ConvertFrom == y.AmountType && z.ConvertTo == invType)
+                || (z.ConvertFrom == invType && z.ConvertTo == y.AmountType))[0]
 
             if (invType != AmountType.UNKOWN && conversionRate) {
                 let costOfInventoryItem = (inv.Cost / inv.AmountBought)
@@ -46,7 +46,7 @@ let recipeTransformed = fakeRecipes.map(x => {
                 AmountCost: inv?.Cost ?? "Never bought",
                 AmountType: Object.keys(AmountType)[invType],
                 RecipeAmount: y.Amount,
-                RecipeAmountType: Object.keys(AmountType)[y.Type],
+                RecipeAmountType: Object.keys(AmountType)[y.AmountType],
                 RecipeTotal: totalPerIngredient
             })
         }),
