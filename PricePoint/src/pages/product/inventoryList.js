@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'react-bootstrap'
 import { fakeInventory, fakeIngredients } from '../../data/fakeData'
 
 let inventoryTransform = fakeInventory.map(x => {
-    let ing = fakeInventory.filter(z => z.IngredientId == x.IngredientId)[0]
+    let ing = fakeIngredients.filter(z => z.IngredientId == x.IngredientId)[0]
 
     return ({
         IngredientId: x.IngredientId,
