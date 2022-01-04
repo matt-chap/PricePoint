@@ -6,10 +6,11 @@ import { fakeInventory, fakeIngredients } from '../../data/fakeData'
 let inventoryTransform = fakeInventory.map(x => {
     let ing = fakeIngredients.filter(z => z.IngredientId == x.IngredientId)[0]
 
+    const currentStock = fakeInventory.filter(z => z.IngredientId == x.IngredientId).map(x => x.AmountBought).reduce((partial_sum, a) => partial_sum + a, 0);
     return ({
         IngredientId: x.IngredientId,
         InventoryName: ing?.Ingredient ?? "unknown",
-        CurrentStock: x.CurrentStock,
+        CurrentStock: currentStock,
         ClosestExperationDate: x.ClosestExperationDate
     })
 })
@@ -28,7 +29,6 @@ export const InventoryList = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th className={styles.inventory_data}>IngredientId</th>
                                     <th className={styles.inventory_data}>CurrentStock</th>
                                     <th className={styles.inventory_data}>InventoryName</th>
                                     <th className={styles.inventory_data}>ClosestExperationDate</th>
@@ -38,7 +38,6 @@ export const InventoryList = () => {
                                 {inventoryTransform && inventoryTransform.map((x) => {
                                     return (
                                         <tr key={x.InventoryId}>
-                                            <td className={styles.inventory_data}>{x.IngredientId}</td>
                                             <td className={styles.inventory_data}>{x.CurrentStock}</td>
                                             <td className={styles.inventory_data}>{x.InventoryName}</td>
                                             <td className={styles.inventory_data}>{x.ClosestExperationDate}</td>
