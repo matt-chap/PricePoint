@@ -45,8 +45,8 @@ export const RecipeList = () => {
                                         <td className={styles.recipe_data}>{x.Recipe}</td>
                                         <td className={styles.recipe_data}>{x.Ingrdients && x.Ingrdients.map((v) => {
                                             return (
-                                                "Ingredient Name " + v.IngredientName + "\n" +
-                                                "Amount Type " + Object.keys(AmountType)[v.AmountType] + "\n" +
+                                                "Name " + v.IngredientName + "\n" +
+                                                "Type " + Object.keys(AmountType)[v.AmountType] + "\n" +
                                                 "Amount " + v.Amount + "\n"
                                             )
                                         })}</td>
