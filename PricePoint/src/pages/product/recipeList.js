@@ -4,8 +4,6 @@ import { Table, Row, Col } from 'react-bootstrap'
 import { fakeRecipes, AmountType, fakeIngredients } from '../../data/fakeData'
 
 let fakeRecipiesTransformed = fakeRecipes.map(x => {
-
-
     return ({
         Recipe: x.Recipe,
         Ingrdients: x.Ingrdients.map((v) => {

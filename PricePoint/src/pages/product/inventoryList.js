@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './inventoryList.module.scss'
+import AddCircleIcon from '@material-ui/icons/AddCircle'
+import TextField from '@material-ui/core/TextField'
 import { Table, Row, Col } from 'react-bootstrap'
 import { fakeInventory, fakeIngredients } from '../../data/fakeData'
 
@@ -32,6 +34,17 @@ export const InventoryList = () => {
                                     <th className={styles.inventory_data}>CurrentStock</th>
                                     <th className={styles.inventory_data}>InventoryName</th>
                                     <th className={styles.inventory_data}>ClosestExperationDate</th>
+                                </tr>
+                                <tr>
+                                    <th className={styles.inventory_data}>
+                                    <TextField id="standard-basic" label="Standard" variant="standard" />
+                                    </th>
+                                    <th className={styles.inventory_data}>
+                                    <TextField id="standard-basic" label="Standard" variant="standard" />
+                                    </th>
+                                    <th className={styles.inventory_data}>
+                                    <TextField id="standard-basic" label="Standard" variant="standard" />
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
