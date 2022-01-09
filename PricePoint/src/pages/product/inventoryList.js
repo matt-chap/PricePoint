@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './inventoryList.module.scss'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
-import TextField from '@material-ui/core/TextField'
+import { TextField, Autocomplete } from '@material-ui/core'
 import { Table, Row, Col } from 'react-bootstrap'
 import { fakeInventory, fakeIngredients } from '../../data/fakeData'
 
@@ -37,10 +37,16 @@ export const InventoryList = () => {
                                 </tr>
                                 <tr>
                                     <th className={styles.inventory_data}>
-                                    <TextField id="standard-basic" label="Standard" variant="standard" />
+                                    <AddCircleIcon />
                                     </th>
                                     <th className={styles.inventory_data}>
-                                    <TextField id="standard-basic" label="Standard" variant="standard" />
+                                    <Autocomplete
+                                        disablePortal
+                                        id="combo-box-demo"
+                                        options={fakeIngredients}
+                                        sx={{ width: 300 }}
+                                        renderInput={(params) => <TextField {...params} label="InventoryName" />}
+                                        />
                                     </th>
                                     <th className={styles.inventory_data}>
                                     <TextField id="standard-basic" label="Standard" variant="standard" />
