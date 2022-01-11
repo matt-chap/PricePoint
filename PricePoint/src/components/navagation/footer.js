@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
-import { Android, Apple } from '@material-ui/icons'
+import { Android, Apple } from '@mui/icons-material'
 import styles from './footer.module.scss'
 
 export const Footer = () => {

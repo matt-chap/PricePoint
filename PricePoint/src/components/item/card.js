@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, CardContent, CardActionArea, Grid } from '@material-ui/core'
+import { Typography, CardContent, CardActionArea, Grid } from '@mui/material'
 import { Col } from 'react-bootstrap'
 
 export const CardItem = ({ item }) => {

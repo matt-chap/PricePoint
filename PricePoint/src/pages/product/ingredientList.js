@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './ingredientsList.module.scss'
 import { fakeIngredients } from '../../data/fakeData'
-import AddCircleIcon from '@material-ui/icons/AddCircle'
-import { TextField, Autocomplete } from '@material-ui/core'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import { TextField, Autocomplete } from '@mui/material'
 import { Table, Row, Col } from 'react-bootstrap'
 
 export const IngredientList = () => {

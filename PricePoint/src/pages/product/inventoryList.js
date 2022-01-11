@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './inventoryList.module.scss'
-import AddCircleIcon from '@material-ui/icons/AddCircle'
-import { TextField, Autocomplete } from '@material-ui/core'
+import AddCircleIcon from '@mui/icons-material/AddCircle'
+import { TextField, Autocomplete } from '@mui/material'
 import { Table, Row, Col } from 'react-bootstrap'
 import { fakeInventory, fakeIngredients } from '../../data/fakeData'
 

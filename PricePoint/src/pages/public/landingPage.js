@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import styles from './landingPage.module.scss'
-import { LocalGroceryStore, Storefront, Devices } from '@material-ui/icons'
-import Button from '@material-ui/core/Button';
+import { LocalGroceryStore, Storefront, Devices } from '@mui/icons-material'
+import Button from '@mui/material/Button';
 import { style } from 'dom-helpers';
 
 export const LandingPage = () => {
