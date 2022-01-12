@@ -23,8 +23,7 @@ export const InventoryList = () => {
             <h1>Inventory List</h1>
             <Row className={styles.row_padding}>
                 <Col sm={0} md={2} lg={2} className={styles.center_align_items}>Add</Col>
-                <Col sm={12} md={8} lg={8} className={styles.center_align_items}><input type='text'></input></Col>
-                <Col sm={0} md={2} lg={2} className={styles.center_align_items}></Col>
+                <Col sm={12} md={8} lg={8} className={styles.center_align_items}><Autocomplete /></Col>
             </Row>
             <Row className={styles.row_padding}>
                     <Col xs sm lg className={styles.center_align_items}>
